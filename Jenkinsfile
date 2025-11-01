@@ -36,8 +36,8 @@ pipeline {
                     sh '''
                         set -x
                         docker images
-                        docker run --rm ${DOCKER_IMAGE}
-                    '''
+                        docker run --rm -p 8080:80 ${DOCKER_IMAGE}			                    
+'''
                 }
             }
         }
