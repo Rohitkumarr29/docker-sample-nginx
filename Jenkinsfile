@@ -35,9 +35,12 @@ pipeline {
                     echo '🚀 Running Docker container...'
                     sh '''
                         set -x
-                        docker images
-                        docker run --rm -p 8081:80 ${DOCKER_IMAGE}			                    
+docker run -d -p 8081:80 nginx:1.100
+sleep 5
+curl -I http://localhost:8081
+docker stop $(docker ps -q --filter ancestor=nginx:1.100)
 '''
+
                 }
             }
         }
