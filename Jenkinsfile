@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '🔄 Checking out source code...'
-                git branch: 'main', url: 'https://github.com/Rohitkumarr29/docker-sample-nginx.git'
+                git branch: 'master', url: 'https://github.com/Rohitkumarr29/docker-sample-nginx.git'
             }
         }
 
